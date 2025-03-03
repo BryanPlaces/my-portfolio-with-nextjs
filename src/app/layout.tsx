@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import localFont from "next/font/local";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from "react-bootstrap";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,8 +31,18 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          background: "linear-gradient(to left, #040404, #110730)",
+          minHeight: "100vh",
+        }}
       >
-        {children}
+        <Container>
+          <Navbar />
+        </Container>
+
+        <main>
+          <Container>{children}</Container>
+        </main>
       </body>
     </html>
   );
