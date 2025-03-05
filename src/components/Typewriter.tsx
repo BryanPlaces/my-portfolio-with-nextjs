@@ -1,7 +1,13 @@
 "use client"
 import { useTypewriter } from "@/hooks/useTypewriter";
 
-const Typewriter = ({ texts, speed, delay }) => {
+interface TypewriterProps {
+  texts: string[];
+  speed: number;
+  delay: number;
+}
+
+const Typewriter = ({ texts, speed, delay }: TypewriterProps) => {
   const displayText = useTypewriter(texts, speed, delay);
 
   return <span className="typewriter">{displayText}</span>;

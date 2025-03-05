@@ -12,7 +12,7 @@ const contactIcons: Record<string, JSX.Element> = {
 
 const ContactMeSection = () => (
   <>
-    <h2 className="text-center pb-4">No dudes en <span className="highlighted-text">contactar </span>conmigo</h2>
+    <h2 className="text-center pb-4">No dudes en <span className="highlighted-text">contactarme</span></h2>
     
     <Row className="text-center justify-content-center gap-3">
       <Col md={5}>

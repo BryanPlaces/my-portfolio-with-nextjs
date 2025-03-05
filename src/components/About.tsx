@@ -3,8 +3,7 @@ const About = () => (
   <>
     <h2 className="mb-4 text-center">SOBRE MI</h2>
     <p>
-      Soy un programador con más de{" "}
-      <b className="highlighted-text">5 años de experiencia</b> en desarrollo web, tanto en frontend como en backend. 
+      Programador con más de <b className="highlighted-text">5 años de experiencia</b> en desarrollo web, tanto en frontendcomo en backend. 
       Mi especialidad radica en tecnologías como <b className="highlighted-text">JavaScript, React.js, Vue.js, TypeScript, PHP y Laravel</b>.
     </p>
 

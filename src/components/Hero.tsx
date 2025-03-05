@@ -1,8 +1,12 @@
-import { Row, Col, Image } from "react-bootstrap";
+import { Row, Col, Image, Button } from "react-bootstrap";
 import Typewriter from "./Typewriter";
 import '@/styles/components/Hero.scss';
+import { useNavigation } from "@/hooks/useNavigation";
 
 const Hero = () => {
+
+  const { handleScroll } = useNavigation();
+  
   return (
     <>
       <Row className="home-content">
@@ -18,8 +22,13 @@ const Hero = () => {
             Soy<strong className="highlighted-text"> Bryan Places</strong>
           </h1>
 
-          <div style={{ margin: 50, textAlign: "left", minHeight: '60px' }}>
+          <div className="typewriter-wrapper">
             <Typewriter texts={["FrontEnd Developer", "BackEnd Developer", "Software developer"]} speed={100} delay={1500} />
+          </div>
+
+          <div className="hero-buttons">
+            <Button className="contact-button" onClick={() => handleScroll('contact')}>Contacto</Button>
+            <Button className="download_cv-button" target="_blank" href="/bryan_places_cv.pdf">Descargar CV</Button>
           </div>
         </Col>
 

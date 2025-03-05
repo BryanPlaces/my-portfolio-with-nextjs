@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 export default function Home() {
   return (
     <>
-      <Container fluid>
+      <Container id="hero" fluid>
         <Hero />
       </Container>
 
@@ -22,6 +22,9 @@ export default function Home() {
       </Container>
 
       <Container id="projects" fluid className="py-5">
+        <h2 className="text-center pb-4">
+          Proyectos más recientes en los que <strong className="highlighted-text">trabajé.</strong>
+        </h2>
         <ProjectList />
       </Container>
 
@@ -29,7 +32,7 @@ export default function Home() {
         <ExperienceSection />
       </Container>
 
-      <Container fluid className="py-5">
+      <Container id="contact" fluid className="py-5">
         <ContactMeSection />
       </Container>
     </>

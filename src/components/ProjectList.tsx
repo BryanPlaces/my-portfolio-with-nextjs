@@ -2,13 +2,10 @@ import { Button, Col, Row } from "react-bootstrap";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
 import '@/styles/components/ProjectList.scss';
+import Link from "next/link";
 
 const ProjectList = () => (
   <>
-    <h2 className="text-center pb-4">
-      Proyectos más recientes en los que <strong className="highlighted-text">trabajé.</strong>
-    </h2>
-
     <Row>
       {
         projects.map((project, index) => (
@@ -19,9 +16,13 @@ const ProjectList = () => (
       }
     </Row>
 
-    <Button className="">
-      Ver mas proyectos
-    </Button>
+    <div className="d-flex justify-content-center py-4">
+    <Link href="/projects" passHref legacyBehavior>
+      <Button size="lg" className="">
+        Ver mas proyectos
+      </Button>
+    </Link>
+    </div>
   </>
 );
 
