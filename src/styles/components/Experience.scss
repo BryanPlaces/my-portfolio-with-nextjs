@@ -1,0 +1,11 @@
+@import '../variables';
+
+.experience-card {
+  color: $text-color;
+  background-color: transparent;
+  border: 2px solid $icon-border-color;
+
+  .experience-img {
+    max-width: 100px;
+  }
+}

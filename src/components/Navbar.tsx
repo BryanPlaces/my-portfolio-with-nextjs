@@ -2,16 +2,14 @@
 import React, { useEffect, useState } from "react";
 import {Image, Button, Container, Navbar, Nav} from "react-bootstrap";
 import { CgGitFork } from "react-icons/cg";
-
 import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
-import { CgFileDocument } from "react-icons/cg";
-import Link from "next/link";
+//import Link from "next/link";
+import '@/styles/components/Navbar.scss';
 
 const NavBar = () => {
   const [expand, updateExpanded] = useState<boolean>(false);
@@ -25,6 +23,7 @@ const NavBar = () => {
         updateNavbar(false);
       }
     }
+    scrollHandler();
 
     window.addEventListener("scroll", scrollHandler);
     
@@ -33,11 +32,28 @@ const NavBar = () => {
     };
   }, []);
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 50; // Ajusta este valor según la altura de tu navbar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      updateExpanded(false); // Cerrar el navbar en móvil después de hacer clic
+    }
+  };
+
   return (
     <Navbar
       expanded={expand}
       fixed="top"
-      expand="md"
+      expand="lg"
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
@@ -57,44 +73,38 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Link href="/" passHref legacyBehavior>
-                <Nav.Link onClick={() => updateExpanded(false)}>
-                  <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-                </Nav.Link>
-              </Link>
-
+              <Nav.Link onClick={() => handleScroll("home")}>
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> Inicio
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Link href="/about" passHref legacyBehavior>
-                <Nav.Link onClick={() => updateExpanded(false)}>
-                  <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-                </Nav.Link>
-              </Link>
+              <Nav.Link onClick={() => handleScroll("about")}>
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> Sobre Mi
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Link href="/projects" passHref legacyBehavior>
-                <Nav.Link onClick={() => updateExpanded(false)}>
-                  <AiOutlineFundProjectionScreen
-                    style={{ marginBottom: "2px" }}
-                  />{" "}
-                  Projects
-                </Nav.Link>
-              </Link>
+              <Nav.Link onClick={() => handleScroll("projects")}>
+                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Proyectos
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Link href="/resume" passHref legacyBehavior>
-                <Nav.Link onClick={() => updateExpanded(false)}>
-                  <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-                </Nav.Link>
-              </Link>
+              <Nav.Link onClick={() => handleScroll("experience")}>
+                Experiencia
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link onClick={() => handleScroll("contact")}>
+                Contact
+              </Nav.Link>
             </Nav.Item>
 
             <Nav.Item className="fork-btn">
               <Button
-                href="https://github.com/soumyajit4419/Portfolio"
+                href="https://github.com/BryanPlaces/my-portfolio-with-nextjs"
                 target="_blank"
                 className="fork-btn-inner"
               >

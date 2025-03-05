@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+
+$highlited-color: #c770f0;
+
+/* NAVBAR VARIABLES */
+$navbar-bg-color: #1b1a2ea9; // Background color of the sticky Navbar
+$navbar-shadow-color: rgba(9, 5, 29, 0.171); // Shadow color of the Navbar
+$navbar-toggler-color: #be50f4; // Color of the toggler icon
+$navbar-link-hover-color: #c95bf5; // Hover color for links
+$navbar-mobile-bg-color: #181a27; // Background color of the Navbar on mobile
+$text-color: white; // Text color
+$logo-size: 1.4em; // Logo size
+
+/* ICONS VARIABLES */
+$icon-color: #700c86; // Base color for icons
+$icon-border-color: rgba(211, 160, 235, 0.637); // Border color
+$icon-hover-border-color: rgba(197, 115, 230, 0.883); // Border color on hover
+$icon-shadow-color: rgba(89, 4, 168, 0.137); // Shadow color

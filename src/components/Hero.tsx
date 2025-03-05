@@ -1,10 +1,11 @@
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Row, Col, Image } from "react-bootstrap";
 import Typewriter from "./Typewriter";
+import '@/styles/components/Hero.scss';
 
 const Hero = () => {
   return (
-    <Container fluid className="home-content">
-      <Row>
+    <>
+      <Row className="home-content">
         <Col md={7} className="d-flex flex-column justify-content-center">
           <h1 className="px-5 pb-1">
             ¡Hola!{" "}
@@ -26,7 +27,7 @@ const Hero = () => {
           <Image src="/about.png" alt="Next.js logo" fluid style={{ objectFit:'contain'}} />
         </Col>
       </Row>
-    </Container>
+    </>
   )
 }
 

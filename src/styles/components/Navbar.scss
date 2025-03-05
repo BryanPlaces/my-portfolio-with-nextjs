@@ -1,0 +1,160 @@
+@import '../variables';
+
+/* --------- */
+/* Navbar Section  */
+/* --------- */
+
+.sticky {
+  background-color: $navbar-bg-color;
+  transition: all 0.3s ease-out 0s;
+  box-shadow: 0px 10px 10px 0px $navbar-shadow-color;
+  backdrop-filter: blur(15px);
+}
+
+.navbar {
+  position: fixed;
+  transition: all 0.3s ease-out 0s;
+  padding: 0.3rem 2rem;
+  font-size: 1.2rem;
+
+  @media (max-width: 767px) {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    background-color: $navbar-mobile-bg-color;
+  }
+}
+
+.navbar-toggler {
+  position: relative;
+  background-color: transparent;
+  border-color: transparent;
+
+  span {
+    display: block;
+    background-color: $navbar-toggler-color;
+    height: 4px;
+    width: 27px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transform: rotate(0deg);
+    left: 0;
+    opacity: 1;
+  }
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  span:nth-child(1),
+  span:nth-child(3) {
+    transition: transform 0.35s ease-in-out;
+  }
+
+  &:not(.collapsed) {
+    span:nth-child(1) {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      transform: rotate(135deg);
+      opacity: 0.9;
+    }
+
+    span:nth-child(2) {
+      height: 12px;
+      visibility: hidden;
+      background-color: transparent;
+    }
+
+    span:nth-child(3) {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      transform: rotate(-135deg);
+      opacity: 0.9;
+    }
+  }
+}
+
+.navbar-brand {
+  color: $text-color;
+
+  .logo {
+    height: $logo-size;
+    width: 2.5em;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    color: $text-color !important;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .nav-item {
+    position: relative;
+    margin-left: 20px;
+
+    a {
+      font-weight: 400;
+      transition: all 0.3s ease-out 0s;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: relative;
+        display: block;
+        height: 5px;
+        width: 0;
+        border-radius: 16px;
+        background: $navbar-link-hover-color;
+        bottom: 1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease-out 0s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767px) {
+      a::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.nav-link {
+  padding: 0.8rem 1rem;
+
+  @media (max-width: 767px) {
+    padding: 0.7rem 1rem;
+  }
+}
+
+.fork-btn {
+  font-size: 1.1em !important;
+  padding-top: 3px !important;
+}
+
+.fork-btn-inner {
+  line-height: 1.4em !important;
+  background-color: #934cce5e !important;
+  padding: 0.25rem 1.1rem !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.fork-btn-inner:hover {
+  transform: translateY(-2px) !important;
+  background-color: #a24dd386 !important;
+  border-color: #a24dd386 !important;
+}
+.fork-btn-inner::after {
+  display: none !important;
+}
