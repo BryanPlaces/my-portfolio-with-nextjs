@@ -7,13 +7,17 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-//import Link from "next/link";
 import '@/styles/components/Navbar.scss';
 import { useNavigation } from "@/hooks/useNavigation";
+import Link from "next/link";
+import { usePathname } from 'next/navigation';
 
 const NavBar = () => {
 
   const { expand, updateExpanded, navColour, handleScroll } = useNavigation();
+  
+
+  const pathname = usePathname();
 
   return (
     <Navbar expanded={expand} fixed="top" expand="lg" className={navColour ? "sticky" : "navbar"}>
@@ -34,28 +38,35 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link onClick={() => handleScroll("hero")}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Inicio
-              </Nav.Link>
+              <Link href="/" passHref legacyBehavior>
+                <Nav.Link onClick={() => handleScroll("hero")}>
+                  <AiOutlineHome style={{ marginBottom: "2px" }} /> Inicio
+                </Nav.Link>
+              </Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link onClick={() => handleScroll("about")}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> Sobre Mi
-              </Nav.Link>
-            </Nav.Item>
+            {pathname === '/' && (
+              <>
+                <Nav.Item>
+                  <Nav.Link onClick={() => handleScroll("about")}>
+                    <AiOutlineUser style={{ marginBottom: "2px" }} /> Sobre Mi
+                  </Nav.Link>
+                </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link onClick={() => handleScroll("projects")}>
-                <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Proyectos
-              </Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link onClick={() => handleScroll("projects")}>
+                    <AiOutlineFundProjectionScreen style={{ marginBottom: "2px" }} /> Proyectos
+                  </Nav.Link>
+                </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link onClick={() => handleScroll("experience")}>
-                <CgWorkAlt style={{ marginBottom: "2px" }} /> Experiencia
-              </Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link onClick={() => handleScroll("experience")}>
+                    <CgWorkAlt style={{ marginBottom: "2px" }} /> Experiencia
+                  </Nav.Link>
+                </Nav.Item>
+              </>
+            )}
+
 
             <Nav.Item className="fork-btn">
               <Button

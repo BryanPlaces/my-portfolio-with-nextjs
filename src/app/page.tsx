@@ -1,6 +1,7 @@
 "use client"
 import { Hero, About, Skills, Tools, ProjectList, ExperienceSection, ContactMeSection} from "@/components";
-import { Container } from "react-bootstrap";
+import Link from "next/link";
+import { Button, Container } from "react-bootstrap";
 
 export default function Home() {
   return (
@@ -25,7 +26,16 @@ export default function Home() {
         <h2 className="text-center pb-4">
           Proyectos más recientes en los que <strong className="highlighted-text">trabajé.</strong>
         </h2>
-        <ProjectList />
+        
+        <ProjectList showFeatured={true} />
+        
+        <div className="d-flex justify-content-center py-4">
+          <Link href="/projects" passHref legacyBehavior>
+            <Button size="lg" className="">
+              Ver mas proyectos
+            </Button>
+          </Link>
+        </div>
       </Container>
 
       <Container id="experience" fluid className="py-4">

@@ -2,45 +2,89 @@ import { Project } from "@/types/Project";
 
 export const projects: Project[] = [
   {
-    imgPath:'projects/atlantida_submarine.png',
-    title:"Atlantida Submarine",
-    description:"Proyecto de venta y gestión de tickets para realizar tours en el sur de Gran Canaria.",
-    ghLink:"https://github.com/soumyajit4419/Chatify",
-    technologies: ['laravel'],
+    imgPath:'projects/react_ecommerce.png',
+    title:"E-Commerce",
+    description:"Tienda en línea creada con React y TypeScript, con navegación fluida, carrito de compras y diseño adaptable.",
+    webUrl:"https://bryan-react-ecommerce.netlify.app/",
+    technologies: ['react', 'typescript', 'bootstrap'],
+    featured: true,
   },
   {
-    imgPath: 'projects/visitr_app.png',
-    title: "Visitr",
-    description: "CRM de gestión de contenido destinado a realizar visitas virtuales de localizaciones como museos y ciudades.",
-    ghLink: "https://github.com/soumyajit4419/Bits-0f-C0de",
-    technologies: [ 'laravel' ]
+    imgPath:'projects/todo_list_react_tailwind.png',
+    title:"Todo List",
+    description:"Aplicación de lista de tareas creada con React y TypeScript, con gestión de tareas, marcado de completadas y diseño adaptable.",
+    webUrl:"https://bryan-react-ecommerce.netlify.app/",
+    technologies: ['react', 'typescript', 'tailwind'],
+    featured: true,
   },
   {
     imgPath: 'projects/nfl_gamepass.jpg',
     title: "NFL GAMEPASS",
     description: "Proyecto de streaming, brindando soporte a aplicaciones en Samsung, LG y Hisense.",
-    ghLink: "https://github.com/soumyajit4419/Editor.io",
-    technologies: [ 'react' ]
+    technologies: ['javascript', 'react'],
+    featured: true,
+  },
+  {
+    imgPath:'projects/atlantida_submarine.png',
+    title:"Atlantida Submarine",
+    description:"Proyecto de venta y gestión de tickets para realizar tours en el sur de Gran Canaria.",
+    webUrl:"https://atlantidasubmarine.com/",
+    technologies: ['laravel', 'javascript', 'jquery', 'bootstrap'],
+    featured: true,
+  },
+  {
+    imgPath: 'projects/visitr_app.png',
+    title: "Visitr",
+    description: "CRM de gestión de contenido destinado a realizar visitas virtuales de localizaciones como museos y ciudades.",
+    technologies: ['laravel', 'javascript', 'jquery'],
+    featured: false,
   },
   {
     imgPath: 'projects/videlive_1.jpg',
     title: "Videlive",
     description: "Plataforma de entrenamientos virtual a medida.",
-    ghLink: "https://videlive.net/",
-    technologies: [ 'laravel', 'vue' ]
+    webUrl: "https://videlive.net/",
+    technologies: [ 'laravel', 'vue' ],
+    featured: false,
   },
   {
     imgPath: 'projects/superat.jpg',
     title: "Superat",
     description: "Aplicación web para centro de Actividades Dirigidas y Fitness",
-    ghLink: "https://www.superat.net/",
-    technologies: [ 'laravel', 'vue' ]
+    webUrl: "https://www.superat.net/",
+    technologies: [ 'laravel', 'vue' ],
+    featured: false,
   },
   {
     imgPath: 'projects/lcteurope_1.jpg',
     title: "LCT Europe",
     description: "Plataforma de venta de excursiones a traves de las Islas Canarias",
-    ghLink: "https://github.com/soumyajit4419/Face_And_Emotion_Detection",
-    technologies: [ 'laravel', 'vue' ]
+    webUrl: "https://www.lcteurope.com/",
+    technologies: ['laravel', 'vue', 'jquery', 'bootstrap'],
+    featured: false,
+  },
+  {
+    imgPath: 'projects/ipsofactum.png',
+    title: "Ipsofactum",
+    description: "Software integral de gestión empresarial que abarca facturación, administración de equipos, gestión de proyectos y CRM.",
+    webUrl: "https://www.ipsofactum.es/",
+    technologies: ['laravel', 'vue', 'vuetify'],
+    featured: false,
+  },
+  {
+    imgPath: 'projects/exams_las_palmas.png',
+    title: "Exams Las Palmas",
+    description: "Plataforma de gestión de matrículas para exámenes de inglés de Cambridge.",
+    webUrl: "https://www.examslaspalmas.com/",
+    technologies: ['laravel', 'javascript', 'jquery', 'bootstrap'],
+    featured: false,
+  },
+  {
+    imgPath: 'projects/fast_food.png',
+    title: "Fast Food",
+    description: "Plataforma ágil y eficiente para la gestión de pedidos y entregas de comida a domicilio.",
+    webUrl: "",
+    technologies: ['laravel', 'vue', 'vuetify'],
+    featured: false,
   }
 ];

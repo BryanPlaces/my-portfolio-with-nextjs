@@ -16,17 +16,18 @@
   opacity: 0.9;
   transition: all 0.5s ease 0s;
   height: 100%;
-}
-.project-card-view:hover {
-  transform: scale(1.02);
-  overflow: hidden;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561);
-}
-
-.card-img-top {
-  border-radius: 10px;
-  object-fit: cover;
-  height: 100%;
+  
+  &:hover {
+    transform: scale(1.02);
+    overflow: hidden;
+    box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561);
+  }
+  
+  .card-img-top {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+  }
 }
 
 .project-heading {
